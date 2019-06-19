@@ -1,5 +1,5 @@
 {
-  "extends": "@terminus/tslint-config-frontend/development",
+  "extends": "@terminus/tslint-config-frontend",
   "rules": {
     "component-selector": [
       true,
