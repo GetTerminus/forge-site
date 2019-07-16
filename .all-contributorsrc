@@ -1,0 +1,25 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "shani-terminus",
+      "name": "shani-terminus",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/44702601?v=4",
+      "profile": "https://github.com/shani-terminus",
+      "contributions": [
+        "code",
+        "test",
+        "tool"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "ui-docs-site",
+  "projectOwner": "GetTerminus",
+  "repoType": "github",
+  "repoHost": "https://github.com"
+}
