@@ -1,16 +1,26 @@
 {
-  "name": "ui-docs-site",
+  "name": "@terminus/ui-docs-site",
+  "description": "Documentation site for the Terminus Design Language",
   "version": "0.0.0",
+  "author": "@terminus",
+  "license": "UNLICENSED",
+  "private": true,
+  "publishConfig": {
+    "access": "restricted"
+  },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port 4201",
+    "start": "ng serve --port 4300",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "cm": "npx git-cz"
+    "////////// Section: Tooling": "==============================",
+    "cm": "npx git-cz",
+    "contributors:add": "npx all-contributors add",
+    "contributors:generate": "npx all-contributors generate",
+    "contributors:check": "npx all-contributors check"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "^8.0.1",
     "@angular/cdk": "^8.0.1",
@@ -39,19 +49,38 @@
     "@angular/cli": "~8.0.3",
     "@angular/compiler-cli": "~8.0.1",
     "@angular/language-service": "~8.0.1",
+    "@terminus/eslint-config-frontend": "^1.0.3",
+    "@terminus/tslint-config-frontend": "^1.0.3",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/jest": "^24.0.15",
     "@types/node": "~8.9.4",
+    "all-contributors-cli": "^6.8.0",
     "codelyzer": "^5.0.0",
+    "commitizen": "^3.1.1",
+    "cz-customizable": "^6.2.0",
+    "husky": "^3.0.0",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
-    "@terminus/eslint-config-frontend": "^1.0.3",
-    "@terminus/tslint-config-frontend": "^1.0.3",
     "jest": "^24.8.0",
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
-    "typescript": "~3.4.3"
+    "typescript": "~3.4.3",
+    "validate-commit-msg": "^2.14.0"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "validate-commit-msg"
+    }
+  },
+  "config": {
+    "loglevel": "warn",
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": "./tooling/cz-config.js"
+    }
   }
 }
