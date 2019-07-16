@@ -1,0 +1,28 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "benjamincharity",
+      "name": "Benjamin Charity",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/270193?v=4",
+      "profile": "http://benjamincharity.com",
+      "contributions": [
+        "design",
+        "code",
+        "doc",
+        "ideas",
+        "review",
+        "tool"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "ui-docs-site",
+  "projectOwner": "GetTerminus",
+  "repoType": "github",
+  "repoHost": "https://github.com"
+}
