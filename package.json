@@ -1,5 +1,5 @@
 {
-  "name": "@terminus/ui-docs-site",
+  "name": "@terminus/forge-site",
   "description": "Documentation site for the Terminus Design Language",
   "version": "0.0.0",
   "author": "@terminus",
@@ -18,7 +18,10 @@
     "cm": "npx git-cz",
     "contributors:add": "npx all-contributors add",
     "contributors:generate": "npx all-contributors generate",
-    "contributors:check": "npx all-contributors check"
+    "contributors:check": "npx all-contributors check",
+    "////////// Section: Linting": "==============================",
+    "lint:scss": "npx stylelint 'src/**/*.scss'",	    
+    "lint:scss:fix": "npx stylelint 'src/**/*.scss' --fix"
   },
   "dependencies": {
     "@angular/animations": "^8.0.1",
@@ -49,6 +52,7 @@
     "@angular/compiler-cli": "~8.0.1",
     "@angular/language-service": "~8.0.1",
     "@terminus/eslint-config-frontend": "^1.0.3",
+    "@terminus/stylelint-config-frontend": "^1.0.2",
     "@terminus/tslint-config-frontend": "^1.0.3",
     "@types/jest": "^24.0.15",
     "@types/node": "~8.9.4",
@@ -59,6 +63,8 @@
     "husky": "^3.0.0",
     "jest": "^24.8.0",
     "protractor": "~5.4.0",
+    "stylelint": "^10.1.0",
+    "stylelint-order": "^3.0.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "typescript": "~3.4.3",
