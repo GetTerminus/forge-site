@@ -42,9 +42,10 @@ module.exports = {
 
   scopes: [
     {name: 'Build'},
-    {name: 'Framework'},
+    {name: 'Community'},
     {name: 'Demo'},
     {name: 'Design Language'},
+    {name: 'Framework'},
     {name: 'Testing'},
     // TODO: Update to official name
     {name: 'UI Library'},
