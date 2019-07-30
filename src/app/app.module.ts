@@ -8,6 +8,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ComponentsComponent } from './components/components.component';
+import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -15,13 +17,15 @@ import { ComponentsComponent } from './components/components.component';
     ComponentsComponent,
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
     BrowserAnimationsModule,
+    BrowserModule,
+    CoreModule,
     FlexLayoutModule.withConfig({useColumnBasisZero: false}),
+    FormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
