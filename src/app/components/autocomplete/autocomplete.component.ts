@@ -29,10 +29,10 @@ export interface State {
 })
 export class AutocompleteComponent implements OnInit {
   
-  stateCtrl = new FormControl(null, [Validators.required]);
+  public stateCtrl = new FormControl(null, [Validators.required]);
   
-  filteredStates!: Observable<State[]>;
-  states: State[] = [
+  public filteredStates!: Observable<State[]>;
+  public states: State[] = [
     {
       name: 'Arkansas',
       population: '2.978M',
@@ -118,10 +118,10 @@ export class AutocompleteComponent implements OnInit {
       population: '24.112M',
     },
   ];
-  myQuery$: BehaviorSubject<string> = new BehaviorSubject('');
-  fakeAsync = false;
+  public myQuery$: BehaviorSubject<string> = new BehaviorSubject('');
+  public fakeAsync = false;
 
-  comparator: ((f1: any, f2: any) => boolean) | null = this.compareByValue;
+  public comparator: ((f1: any, f2: any) => boolean) | null = this.compareByValue;
 
   constructor() {
     this.filteredStates = this.myQuery$
@@ -134,7 +134,7 @@ export class AutocompleteComponent implements OnInit {
       );
   }
 
-  ngOnInit() {
+  public ngOnInit() {
   }
 
 
@@ -144,37 +144,37 @@ export class AutocompleteComponent implements OnInit {
     return r;
   }
 
-  myFormatUIFn = (v: any): string => v.name;
+  public myFormatUIFn = (v: any): string => v.name;
 
-  compareByValue(f1: any, f2: any) {
+  public compareByValue(f1: any, f2: any) {
     return f1 && f2 && f1.text === f2.text;
   }
-  compareByReference(f1: any, f2: any) {
+  public compareByReference(f1: any, f2: any) {
     return f1 === f2;
   }
 
-  panelChange(e: boolean): void {
+  public panelChange(e: boolean): void {
     console.log(`DEMO: Panel ${e ? 'opened' : 'closed'}`);
   }
 
-  isSelected(v) {
+  public isSelected(v) {
     console.log('DEMO: optionSelected: ', v);
   }
 
-  isDeselected(v) {
+  public isDeselected(v) {
     console.log('DEMO: optionDeselected: ', v);
   }
 
-  log(v: any): void {
+  public log(v: any): void {
     console.log('DEMO: Form value: ', v);
   }
 
-  queryHasChanged(v) {
+  public queryHasChanged(v) {
     console.log('DEMO: query string changed: ', v);
     this.myQuery$.next(v);
   }
 
-  duplicate(e) {
+  public duplicate(e) {
     console.log('DEMO: Duplicate selection: ', e);
   }
 }
