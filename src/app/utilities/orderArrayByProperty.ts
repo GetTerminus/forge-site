@@ -7,7 +7,7 @@
  * descending
  * @return {Array} sortedArray The sorted array
  */
-export function orderArrayByProperty(items: any[], property: string, isDescending: boolean = true): any[] {
+export function orderArrayByProperty(items: any[], property: string, isDescending = true): any[] {
   return items.sort((a: any, b: any) => {
     const nonAlphaRegex = /\W+/g;
 

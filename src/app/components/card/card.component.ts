@@ -8,23 +8,23 @@ import { TsCardBorderOptions, TsCardComponent } from '@terminus/ui/card';
   templateUrl: './card.component.html',
 })
 export class CardComponent implements AfterViewInit {
-  supportsInteraction = false;
-  centered = false;
-  flat = false;
-  theme = 'primary';
-  border: TsCardBorderOptions = 'none';
+  public supportsInteraction = false;
+  public centered = false;
+  public flat = false;
+  public theme = 'primary';
+  public border: TsCardBorderOptions = 'none';
 
   @ViewChild('transitionCard',  {static: true})
-  transitionCard!: TsCardComponent;
+  public transitionCard!: TsCardComponent;
 
-  ngAfterViewInit() {
+  public ngAfterViewInit() {
     // Default the card to 100px height for demo purposes
     const innerCard = document.getElementById(this.transitionCard.id);
-    innerCard!.style.height = '100px';
+    innerCard.style.height = '100px';
   }
 
-  changeCardHeight() {
+  public changeCardHeight() {
     const innerCard = document.getElementById(this.transitionCard.id);
-    innerCard!.style.height = (innerCard!.style.height === '100px') ? '200px' : '100px';
+    innerCard.style.height = (innerCard.style.height === '100px') ? '200px' : '100px';
   }
 }

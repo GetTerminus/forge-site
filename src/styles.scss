@@ -1,1 +1,96 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@terminus/ui/helpers';
+@import '~@terminus/ui/terminus-ui.css';
+
+/** values **/
+$container-max-width: 56rem;
+$container-nav-width: 7rem;
+$main-nav-width: 11.25rem;
+$margin-basic: 1rem;
+$margin-double: 2rem;
+
+html {
+  background-color: color(pure);
+  font-family: $type__family--base;
+  font-size: $type__size--base;
+  font-weight: $type__weight--base;
+}
+
+body {
+  margin: 0;
+  text-align: left;
+}
+
+header,
+footer {
+  background-color: color(pure);
+  box-shadow: calculate-shadow-set-at-depth(2);
+  color: color(utility, dark);
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+header {
+  justify-content: flex-end;
+
+  h1 {
+    margin-right: auto;
+  }
+
+  section {
+    margin: $margin-basic;
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  min-height: calc(#{$container-max-width} / 2);
+
+  nav {
+    background-color: color(utility, xlight);
+    color: color(utility, dark);
+    margin-top: $margin-basic;
+    width: $main-nav-width;
+  }
+
+  section {
+    display: flex;
+
+    .content {
+      flex-grow: 2;
+      margin: $margin-basic;
+      max-width: $container-max-width;
+    }
+    nav {
+      background-color: color(pure);
+      color: color(utility, dark);
+      flex: 1 0 $container-nav-width;
+      margin-left: auto;
+      margin-top: $margin-double;
+      width: $container-nav-width;
+    }
+  }
+}
+
+footer {
+  .content {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    margin-left: $main-nav-width;
+    margin-right: $container-nav-width;
+    max-width: calc(#{$container-max-width} + #{$main-nav-width} - (2 * #{$margin-basic}));
+
+    section {
+      flex-grow: 1;
+      margin: auto;
+
+      nav {
+        margin: $margin-basic;
+      }
+    }
+  }
+}

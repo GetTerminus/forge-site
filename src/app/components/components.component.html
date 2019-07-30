@@ -1,55 +1,36 @@
 <div fxLayout="row">
-  <span>
-    Demos
-    <sup>
-      ({{ components.length }})
-    </sup>
-  </span>
-
-  <span fxFlex></span>
-
-  <div class="versions" fxLayout="row" fxLayoutGap="1em">
-    <div fxLayout="column" fxLayoutAlign="center stretch">
-      <div>
-        @terminus/ui:
-        <strong>{{ uiVersion.full }}</strong>
-      </div>
-
-      <div>
-        @terminus/ngx-tools:
-        <strong>{{ ngxVersion.full }}</strong>
-      </div>
-    </div>
-
-    <div fxLayout="column" fxLayoutAlign="center stretch">
-      <div>
-        @angular/*:
-        <strong>{{ ngVersion.full }}</strong>
-      </div>
-      <div>
-        @angular/material:
-        <strong>{{ matVersion.full }}</strong>
-      </div>
-    </div>
-  </div>
-
-  <span fxFlex></span>
-
-  <span>
-      <a
-        mat-menu-item
-        *ngFor="let component of components"
-        routerLink="{{component.path}}"
-      >
-        {{ component.data.name }}
-      </a>
-
-      <button>
-      {{ activeNavItem?.data?.name || 'Select Demo' }}
-    </button>
-  </span>
+  <header>
+    <h1>Forge<br/>Design System</h1>
+    <section>Search</section>
+    <section>Version</section>
+    <section>Github link</section>
+  </header>
 </div>
 
-<div class="content">
-  <router-outlet></router-outlet>
+<div fxLayout="row" class="main">
+  <nav>
+    placeholder<br>for main<br/>navigation
+  </nav>
+
+  <section>
+    <div class="content">
+      <h2>Component Name!</h2>
+      this is the body of the page that will have the component description, example, etc. This is the meat and potatoes!
+    </div>
+
+    <nav>
+      placeholder for component nav
+    </nav>
+  </section>
+</div>
+
+<div fxLayout="row">
+  <footer>
+    <div class="content">
+      <section><nav>footer links</nav></section>
+      <section><nav>a bunch of more footer links</nav></section>
+      <section><nav>footer links part 3</nav></section>
+    </div>
+  </footer>
+
 </div>

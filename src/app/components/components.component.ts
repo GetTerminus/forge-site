@@ -10,26 +10,26 @@ import {
 } from '@angular/router';
 import { VERSION as NGX_VERSION } from '@terminus/ngx-tools';
 import { VERSION as UI_VERSION } from '@terminus/ui';
-import { componentsList } from './components.constant';
 
 import { orderArrayByProperty } from './../utilities/orderArrayByProperty';
+import { componentsList } from './components.constant';
 
 
 @Component({
-  selector: 'ui-docs-components',
+  selector: 'forge-components',
   templateUrl: './components.component.html',
   styleUrls: ['./components.component.scss'],
 })
 export class ComponentsComponent implements OnInit {
-  components = orderArrayByProperty(componentsList, 'path');
-  title = `Components (${this.components.length})`;
-  height = '100px';
-  path = '';
-  activeNavItem!: {[key: string]: any};
-  uiVersion = UI_VERSION;
-  ngxVersion = NGX_VERSION;
-  ngVersion = NG_VERSION;
-  matVersion = MAT_VERSION;
+  public components = orderArrayByProperty(componentsList, 'path');
+  public title = `Components (${this.components.length})`;
+  public height = '100px';
+  public path = '';
+  public activeNavItem!: {[key: string]: any};
+  public uiVersion = UI_VERSION;
+  public ngxVersion = NGX_VERSION;
+  public ngVersion = NG_VERSION;
+  public matVersion = MAT_VERSION;
 
 
   constructor(
@@ -37,7 +37,7 @@ export class ComponentsComponent implements OnInit {
   ) {}
 
 
-  ngOnInit() {
+  public ngOnInit() {
     this.setCurrentPage();
 
     // Update the navigation menu
@@ -53,7 +53,7 @@ export class ComponentsComponent implements OnInit {
   /**
    * Set the menu to the current page
    */
-  setCurrentPage(): void {
+  public setCurrentPage(): void {
     const routeParts = this.router.routerState.snapshot.url.split('/');
     if (routeParts.length > 2) {
       this.path = routeParts[routeParts.length - 1];
@@ -62,7 +62,7 @@ export class ComponentsComponent implements OnInit {
     this.findActiveComponent();
   }
 
-  findActiveComponent() {
+  public findActiveComponent() {
     this.activeNavItem = this.components.filter((v: any) => {
       return v.path === this.path;
     })[0];
