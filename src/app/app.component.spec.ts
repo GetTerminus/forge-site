@@ -1,32 +1,30 @@
-import { 
-  async,
-  TestBed,
- } from '@angular/core/testing';
+import { Component } from '@angular/core';
+import { ComponentFixture } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { createComponent } from '@terminus/ngx-tools/testing';
+
 import { AppComponent } from './app.component';
 
-describe('AppComponent', () => {
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
-      declarations: [
-        AppComponent
-      ],
-    }).compileComponents();
-  }));
+@Component({
+  template:`
+  <router-outlet></router-outlet>
+  `,
+})
+class TestHostComponent {}
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
+describe('AppComponent', () => {
+
+  let component: TestHostComponent;
+  let fixture: ComponentFixture<TestHostComponent>;
+
+  beforeEach(() => {
+    fixture = createComponent(TestHostComponent, [AppComponent], [RouterTestingModule]);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
   });
 
-  it(`should have as title 'forge site'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('forge site');
+  test(`should exist`, function() {
+    expect(component).toBeTruthy();
   });
 
 });
